@@ -60,14 +60,11 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sum = _.range(1000);
-    var sum = _(sum).reduce(
-      function(memo, x) {
-        if (x % 3 === 0 || x % 5 === 0) {
-          return memo + x;
-        };
-      }, {}
-    );
+    var total = _.range(1000)
+    var sum = _(total).chain()
+              .map(function(x) { return x % 3 === 0 || x % 5 === 0})
+              .reduce(function(sum, x) { return sum + x })
+              .value()
 
     expect(233168).toBe(sum);
   });
