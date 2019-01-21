@@ -91,6 +91,7 @@ describe("About Applying What We Have Learnt", function() {
           .map(function(x) { return x.ingredients })
           .flatten()
           .reduce(function(memo, x) { return (x === 'mushrooms') ? memo + 1 : memo},0)
+          .value()
 
     expect(ingredientCount['mushrooms']).toBe(2);
   });
