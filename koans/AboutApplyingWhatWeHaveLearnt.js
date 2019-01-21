@@ -66,7 +66,7 @@ describe("About Applying What We Have Learnt", function() {
         if (x % 3 === 0 || x % 5 === 0) {
           return memo + x;
         };
-      }, 0
+      }, {}
     );
 
     expect(233168).toBe(sum);
